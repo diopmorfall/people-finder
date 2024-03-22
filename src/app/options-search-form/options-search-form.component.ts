@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioChange, MatRadioModule } from '@angular/material/radio';
 import {MatSelectChange, MatSelectModule} from '@angular/material/select';
@@ -21,6 +21,8 @@ import { nationalitiesInfos } from '../utils/Nationalities';
 })
 export class OptionsSearchFormComponent {
     constructor(){}
+
+    @Output() parametersEvent = new EventEmitter<{ gender: string, nationalities: string}>()
 
     selectedGender: string = '';
     selectedNationalities: string[] = [];
@@ -47,5 +49,12 @@ export class OptionsSearchFormComponent {
             })
         }
         return selectedNationalitiesCodes.toString()
+    }
+
+    sendParameters(): void {
+        this.parametersEvent.emit({ 
+            gender: this.selectedGender ? this.selectedGender : '',
+            nationalities: this.getNationalityCodes() ? this.getNationalityCodes() : ''
+        })
     }
 }

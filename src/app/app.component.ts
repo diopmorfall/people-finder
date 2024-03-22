@@ -13,4 +13,13 @@ import { OptionsSearchFormComponent } from './options-search-form/options-search
 })
 export class AppComponent {
     title = 'people-finder';
+    parameters: { gender: string, nationalities: string } = {
+        gender: '',
+        nationalities: ''
+    }
+
+    getParameters(params: { gender: string, nationalities: string }){
+        this.parameters = params
+        console.log(this.parameters)
+    }
 }
