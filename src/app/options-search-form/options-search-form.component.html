@@ -4,11 +4,12 @@
     <mat-radio-group aria-labelledby="radio-group-label"
         name="radio-group"
         class="radio-group"
+        [(ngModel)]="selectedGender"
+        (change)="selectedGenderChanged($event)"
     >
         <mat-radio-button value="male">Male</mat-radio-button>
         <mat-radio-button value="female">Female</mat-radio-button>
     </mat-radio-group>
-    
     <input type="submit" value="Search">
 </form>
 
