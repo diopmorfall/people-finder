@@ -1,25 +1,32 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 
+import { RandomUserService } from './services/random-user.service';
+import { InputParams } from './model/InputParams';
 import { OptionsSearchFormComponent } from './options-search-form/options-search-form.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     imports: [RouterOutlet, OptionsSearchFormComponent],
+    providers: [RandomUserService],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
 export class AppComponent {
+
+    constructor(private randomUserService: RandomUserService) {}
+
     title = 'people-finder';
-    parameters: { gender: string, nationalities: string } = {
-        gender: '',
-        nationalities: ''
+    users$!: Observable<any>;
+
+    getParameters(params: InputParams){
+        this.getUsers(params)
     }
 
-    getParameters(params: { gender: string, nationalities: string }){
-        this.parameters = params
-        console.log(this.parameters)
+    getUsers(params: InputParams){
+        this.users$ = this.randomUserService.getUsers(params)
     }
 }

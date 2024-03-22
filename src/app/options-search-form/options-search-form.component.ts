@@ -5,6 +5,7 @@ import {MatSelectChange, MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { nationalitiesInfos } from '../utils/Nationalities';
+import { InputParams } from '../model/InputParams';
 
 @Component({
     selector: 'app-options-search-form',
@@ -20,9 +21,8 @@ import { nationalitiesInfos } from '../utils/Nationalities';
     styleUrl: './options-search-form.component.css'
 })
 export class OptionsSearchFormComponent {
-    constructor(){}
 
-    @Output() parametersEvent = new EventEmitter<{ gender: string, nationalities: string}>()
+    @Output() parametersEvent = new EventEmitter<InputParams>()
 
     selectedGender: string = '';
     selectedNationalities: string[] = [];
@@ -47,14 +47,15 @@ export class OptionsSearchFormComponent {
                 }
                 })
             })
-        }
+        } else return '';
+
         return selectedNationalitiesCodes.toString()
     }
 
     sendParameters(): void {
         this.parametersEvent.emit({ 
-            gender: this.selectedGender ? this.selectedGender : '',
-            nationalities: this.getNationalityCodes() ? this.getNationalityCodes() : ''
+            gender: this.selectedGender,
+            nationalities: this.getNationalityCodes()
         })
     }
 }
