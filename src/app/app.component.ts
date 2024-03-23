@@ -6,11 +6,12 @@ import { Observable } from 'rxjs';
 import { RandomUserService } from './services/random-user.service';
 import { InputParams } from './model/InputParams';
 import { OptionsSearchFormComponent } from './options-search-form/options-search-form.component';
+import { UserCardComponent } from './user-card/user-card.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet, OptionsSearchFormComponent, CommonModule],
+    imports: [RouterOutlet, CommonModule, OptionsSearchFormComponent, UserCardComponent],
     providers: [RandomUserService],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
