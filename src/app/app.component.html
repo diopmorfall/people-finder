@@ -3,14 +3,16 @@
     <p>Set your options, or click search to look for people right away</p>
     <app-options-search-form (parametersEvent)="getParameters($event)"></app-options-search-form>
     <section class="results" *ngIf="(users$ | async)?.results as users">
-        <app-user-card *ngFor="let user of users" [userData]="user" />
+        <!--? | slice:startIndex:endIndex (1*5:(1+1)*5) = 5:10 -->
+        <app-user-card *ngFor="let user of users | slice:pageIndex * pageSize:(pageIndex + 1) * pageSize"
+            [userData]="user" 
+        />
         <mat-paginator #paginator
             class="paginator"
-            (page)="handlePageEvent($event)"
+            (page)="onPageEvent($event)"
             [length]="users.length"
             [pageSize]="pageSize"
             [showFirstLastButtons]="showFirstLastButtons"
-            [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
             [hidePageSize]="hidePageSize"
             [pageIndex]="pageIndex"
             aria-label="Select page">
