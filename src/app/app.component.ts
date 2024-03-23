@@ -10,7 +10,7 @@ import { OptionsSearchFormComponent } from './options-search-form/options-search
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet, OptionsSearchFormComponent],
+    imports: [RouterOutlet, OptionsSearchFormComponent, CommonModule],
     providers: [RandomUserService],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
