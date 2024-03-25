@@ -31,6 +31,7 @@ export class OptionsSearchFormComponent {
 
     selectedGenderChanged(e: MatRadioChange): void{
         this.selectedGender = e.value
+        if(this.selectedGender === 'random') this.selectedGender = ''
     }
 
     selectedNationalitiesChanged(e: any): void{ //? see if you can use SelectionChange type
