@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 
-import { User } from '../model/User';
+import { User } from '../../model/User';
 
 @Component({
     selector: 'app-user-card',

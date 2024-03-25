@@ -7,9 +7,9 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 
 import { RandomUserService } from './services/random-user.service';
 import { InputParams } from './model/InputParams';
-import { OptionsSearchFormComponent } from './options-search-form/options-search-form.component';
-import { UserCardComponent } from './user-card/user-card.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
+import { OptionsSearchFormComponent } from './components/options-search-form/options-search-form.component';
+import { UserCardComponent } from './components/user-card/user-card.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { Results } from './model/Results';
 import { User } from './model/User';
 

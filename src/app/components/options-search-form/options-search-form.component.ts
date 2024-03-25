@@ -4,8 +4,8 @@ import { MatRadioChange, MatRadioModule } from '@angular/material/radio';
 import {MatSelectChange, MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
-import { nationalitiesInfos } from '../utils/Nationalities';
-import { InputParams } from '../model/InputParams';
+import { nationalitiesInfos } from '../../utils/Nationalities';
+import { InputParams } from '../../model/InputParams';
 
 @Component({
     selector: 'app-options-search-form',
