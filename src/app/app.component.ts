@@ -87,6 +87,10 @@ export class AppComponent implements OnInit, OnDestroy {
         this.isUserDetailShown = true
     }
 
+    closeUserDetails(){
+        this.isUserDetailShown = false
+    }
+
     onPageEvent(e: PageEvent) {
         this.pageEvent = e;
         this.length = e.length;

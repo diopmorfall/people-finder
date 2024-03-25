@@ -2,6 +2,7 @@
     <mat-card>
         <mat-card-header>
             <h3>{{ selectedUser.name.first}} {{ selectedUser.name.last }}</h3>
+            <span (click)="closeUserDetail()">Close</span>
         </mat-card-header>
         <img mat-card-image src="{{ selectedUser.picture.medium }}" alt="Profile picture">
         <mat-card-content>

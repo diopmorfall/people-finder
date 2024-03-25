@@ -18,5 +18,5 @@
             aria-label="Select page">
         </mat-paginator>
     </section>
-    <app-user-details *ngIf="isUserDetailShown" [selectedUser]="selectedUser" />
+    <app-user-details *ngIf="isUserDetailShown" [selectedUser]="selectedUser" (closeDetailEvent)="closeUserDetails()" />
 </main>

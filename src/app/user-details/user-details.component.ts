@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -13,4 +13,9 @@ import { User } from '../model/User';
 })
 export class UserDetailsComponent {
     @Input() selectedUser!: User
+    @Output() closeDetailEvent = new EventEmitter()
+
+    closeUserDetail(){
+        this.closeDetailEvent.emit()
+    }
 }
