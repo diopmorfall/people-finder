@@ -19,4 +19,7 @@
         </mat-paginator>
     </section>
     <app-user-details *ngIf="isUserDetailShown" [selectedUser]="selectedUser" (closeDetailEvent)="closeUserDetails()" />
+    <section class="error" *ngIf="(users$ | async) as error">
+        <span>We're sorry, but an error occured while fetching the data</span>
+    </section>
 </main>
