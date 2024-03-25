@@ -7,7 +7,8 @@
         <app-user-card *ngFor="let user of users | slice:pageIndex * pageSize:(pageIndex + 1) * pageSize"
             [userData]="user" (selectedUserEvent)="showUserDetails($event)"
         />
-        <mat-paginator #paginator
+        <mat-paginator
+            *ngIf="users.length > 0"
             class="paginator"
             (page)="onPageEvent($event)"
             [length]="users.length"
@@ -19,7 +20,7 @@
         </mat-paginator>
     </section>
     <app-user-details *ngIf="isUserDetailShown" [selectedUser]="selectedUser" (closeDetailEvent)="closeUserDetails()" />
-    <section class="error" *ngIf="(users$ | async) as error">
+    <section class="error" *ngIf="(users$ | async)?.results?.length == 0">
         <span>We're sorry, but an error occured while fetching the data</span>
     </section>
 </main>

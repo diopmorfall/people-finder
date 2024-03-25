@@ -25,7 +25,7 @@ export class RandomUserService {
         }).pipe(
             catchError(error => {
                 console.log('Error in fetching data', error)
-                return of([])
+                return of({ results: [] })
             })
         )
     }
