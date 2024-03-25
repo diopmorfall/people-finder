@@ -5,7 +5,7 @@
     <section class="results" *ngIf="(users$ | async)?.results as users">
         <!--? | slice:startIndex:endIndex (1*5:(1+1)*5) = 5:10 -->
         <app-user-card *ngFor="let user of users | slice:pageIndex * pageSize:(pageIndex + 1) * pageSize"
-            [userData]="user" 
+            [userData]="user" (selectedUserEvent)="showUserDetails($event)"
         />
         <mat-paginator #paginator
             class="paginator"
@@ -18,4 +18,5 @@
             aria-label="Select page">
         </mat-paginator>
     </section>
+    <app-user-details *ngIf="isUserDetailShown" [selectedUser]="selectedUser" />
 </main>

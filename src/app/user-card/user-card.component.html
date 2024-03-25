@@ -1,11 +1,14 @@
 <mat-card>
     <mat-card-header></mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Profile picture">
+    <img mat-card-image src="{{ userData.picture.medium }}" alt="Profile picture">
     <mat-card-content>
-        <h3>{{ userData?.name?.first}} {{ userData?.name?.last }}</h3>
+        <h3>{{ userData.name.first }} {{ userData.name.last }}</h3>
+        <p>{{ userData.location.city }} ({{ userData.location.country }})</p>
+        <p>{{ userData.email }}</p>
+        <p>{{ userData.cell }}</p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button>Learn more</button>
+        <button mat-button (click)="sendUserDetails()">Learn more</button>
     </mat-card-actions>
 </mat-card>
 

@@ -9,12 +9,21 @@ import { RandomUserService } from './services/random-user.service';
 import { InputParams } from './model/InputParams';
 import { OptionsSearchFormComponent } from './options-search-form/options-search-form.component';
 import { UserCardComponent } from './user-card/user-card.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 import { Results } from './model/Results';
+import { User } from './model/User';
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet, CommonModule, OptionsSearchFormComponent, UserCardComponent, MatPaginatorModule],
+    imports: [
+        RouterOutlet,
+        CommonModule,
+        MatPaginatorModule,
+        OptionsSearchFormComponent,
+        UserCardComponent,
+        UserDetailsComponent
+    ],
     providers: [RandomUserService],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
@@ -29,6 +38,8 @@ export class AppComponent implements OnInit, OnDestroy {
     
     title = 'people-finder';
     users$!: Observable<Results>;
+    selectedUser!: User;
+    isUserDetailShown: boolean = false;
     pageEvent: PageEvent = new PageEvent;
     @Input() length: number = 50;
     @Input() pageSize = 5;
@@ -69,6 +80,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
     getUsers(params: InputParams){
         this.users$ = this.randomUserService.getUsers(params)
+    }
+
+    showUserDetails(user: User){
+        this.selectedUser = user
+        this.isUserDetailShown = true
     }
 
     onPageEvent(e: PageEvent) {

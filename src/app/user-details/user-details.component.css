@@ -1,0 +1,15 @@
+.user-details{
+    position: absolute;
+    top: 50px;
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid red;
+    border-radius: 16px;
+    z-index: 5;
+}
+
+mat-card-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

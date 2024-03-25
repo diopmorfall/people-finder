@@ -1,0 +1,17 @@
+<div class="user-details">
+    <mat-card>
+        <mat-card-header>
+            <h3>{{ selectedUser.name.first}} {{ selectedUser.name.last }}</h3>
+        </mat-card-header>
+        <img mat-card-image src="{{ selectedUser.picture.medium }}" alt="Profile picture">
+        <mat-card-content>
+            <p>{{ selectedUser.location.city }} - {{ selectedUser.location.country }}</p>
+            <p>{{ selectedUser.email }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>
+                Contact
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

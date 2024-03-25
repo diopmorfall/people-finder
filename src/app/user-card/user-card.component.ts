@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 
@@ -12,9 +12,15 @@ import { User } from '../model/User';
     styleUrl: './user-card.component.css'
 })
 export class UserCardComponent implements OnInit{
-    @Input() userData: User | undefined
+    
+    @Input() userData!: User;
+    @Output() selectedUserEvent = new EventEmitter<User>()
     
     ngOnInit(): void {
-        console.log(this.userData)
+        //console.log(this.userData)
+    }
+
+    sendUserDetails(): void{
+        this.selectedUserEvent.emit(this.userData)
     }
 }
