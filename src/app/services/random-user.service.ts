@@ -13,14 +13,14 @@ export class RandomUserService {
 
     constructor(private httpClient: HttpClient) { }
 
-    getUsers(params: InputParams): Observable<Results | any> {
+    getUsers(params: InputParams): Observable<Results> {
         let url = `https://randomuser.me/api/`
         let searchParams = new HttpParams();
         searchParams = searchParams.append('results', '50');
         if(params.gender != '') searchParams = searchParams.append('gender', params.gender);
         if(params.nationalities != '') searchParams = searchParams.append('nat', params.nationalities);
 
-        return this.httpClient.get<Results | any>(url, {
+        return this.httpClient.get<Results>(url, {
             params: searchParams
         }).pipe(
             catchError(error => {
