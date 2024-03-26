@@ -1,6 +1,5 @@
-
 <form (ngSubmit)="sendParameters()">
-    <label id="radio-group-label">Select the gender</label>
+    <label id="radio-group-label">Gender</label>
     <mat-radio-group aria-labelledby="radio-group-label"
         name="radio-group"
         class="radio-group"
@@ -23,7 +22,7 @@
             <mat-select-trigger>
                 {{nationalities.value?.[0] || ''}}
                 @if ((nationalities.value?.length || 0) > 1) {
-                <span class="example-additional-selection">
+                <span>
                     (+{{(nationalities.value?.length || 0) - 1}} {{nationalities.value?.length === 2 ? 'other' : 'others'}})
                 </span>
                 }

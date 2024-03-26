@@ -38,7 +38,6 @@ export class AppComponent implements OnInit, OnDestroy {
     title = 'people-finder';
     users$!: Observable<Results>;
     selectedUser!: User;
-    isUserDetailShown: boolean = false;
     pageEvent: PageEvent = new PageEvent;
     @Input() length: number = 50;
     @Input() pageSize = 5;
@@ -79,15 +78,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
     getUsers(params: InputParams){
         this.users$ = this.randomUserService.getUsers(params)
-    }
-
-    showUserDetails(user: User){
-        this.selectedUser = user
-        this.isUserDetailShown = true
-    }
-
-    closeUserDetails(){
-        this.isUserDetailShown = false
     }
 
     onPageEvent(e: PageEvent) {
