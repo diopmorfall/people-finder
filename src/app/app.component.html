@@ -16,8 +16,8 @@
             [showFirstLastButtons]="showFirstLastButtons"
             [hidePageSize]="hidePageSize"
             [pageIndex]="pageIndex"
-            aria-label="Select page">
-        </mat-paginator>
+            aria-label="Select page"
+        />
     </section>
     <app-user-details *ngIf="isUserDetailShown" [selectedUser]="selectedUser" (closeDetailEvent)="closeUserDetails()" />
     <section class="error" *ngIf="(users$ | async)?.results?.length == 0">

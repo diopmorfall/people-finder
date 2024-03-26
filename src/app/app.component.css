@@ -45,3 +45,13 @@ app-options-search-form{
 app-user-card{
     width: 80%;
 }
+
+.paginator{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+::ng-deep .mat-mdc-paginator-container{
+    justify-content: center !important;
+}
