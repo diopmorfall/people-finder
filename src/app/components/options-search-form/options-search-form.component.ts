@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioChange, MatRadioModule } from '@angular/material/radio';
-import {MatSelectChange, MatSelectModule} from '@angular/material/select';
+import { MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 
 import { nationalitiesInfos } from '../../utils/Nationalities';
 import { InputParams } from '../../model/InputParams';
@@ -16,6 +17,7 @@ import { InputParams } from '../../model/InputParams';
         MatRadioModule,
         MatSelectModule,
         MatFormFieldModule,
+        MatButtonModule
     ],
     templateUrl: './options-search-form.component.html',
     styleUrl: './options-search-form.component.css'
