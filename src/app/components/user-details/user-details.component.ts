@@ -1,7 +1,7 @@
 import { Component, Inject, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 import { User } from '../../model/User';
 
@@ -15,8 +15,15 @@ import { User } from '../../model/User';
 export class UserDetailsComponent {
     @Input() selectedUser!: User
     
-    constructor(@Inject(MAT_DIALOG_DATA) public user: User){ 
+    constructor(
+        @Inject(MAT_DIALOG_DATA) public user: User,
+        private dialogRef: MatDialogRef<UserDetailsComponent>
+    ){ 
         this.selectedUser = user;
+    }
+
+    closeUserDetails(){
+        this.dialogRef.close()
     }
 }
 
