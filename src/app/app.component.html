@@ -5,7 +5,7 @@
     <section class="results" *ngIf="(users$ | async)?.results as users">
         <!--? | slice:startIndex:endIndex (1*5:(1+1)*5) = 5:10 -->
         <app-user-card *ngFor="let user of users | slice:pageIndex * pageSize:(pageIndex + 1) * pageSize"
-            [userData]="user" (selectedUserEvent)="showUserDetails($event)"
+            [userData]="user"
         />
         <mat-paginator
             *ngIf="users.length > 0"
@@ -19,7 +19,6 @@
             aria-label="Select page"
         />
     </section>
-    <app-user-details *ngIf="isUserDetailShown" [selectedUser]="selectedUser" (closeDetailEvent)="closeUserDetails()" />
     <section class="error" *ngIf="(users$ | async)?.results?.length == 0">
         <span>We're sorry, but an error occured while fetching the data</span>
     </section>

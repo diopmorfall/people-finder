@@ -21,8 +21,7 @@ import { User } from './model/User';
         CommonModule,
         MatPaginatorModule,
         OptionsSearchFormComponent,
-        UserCardComponent,
-        UserDetailsComponent
+        UserCardComponent
     ],
     providers: [RandomUserService],
     templateUrl: './app.component.html',
