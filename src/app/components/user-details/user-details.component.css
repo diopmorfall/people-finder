@@ -59,3 +59,30 @@ mat-card-actions{
 .mat-mdc-raised-button.mat-primary:active{
     opacity: 0.7;
 }
+
+@media only screen and (min-width: 768px) {
+    .user-details{
+        height: 85vh;
+    }
+    
+    mat-card-header img{
+        width: 180px;
+        height: 180px;
+    }
+
+    mat-card-content{
+        font-size: 22px;
+    }
+
+    mat-card-content h3{
+        font-size: 28px;
+    }
+
+    mat-card-actions{
+        margin-top: 35px;
+    }
+
+    .mat-mdc-raised-button.mat-primary{
+        height: 50px;
+    }
+}

@@ -66,11 +66,16 @@ mat-form-field{
 
 @media only screen and (min-width: 768px) {
     form label:first-of-type{
-        font-size: 20px;
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+    
+    .radio-group{
+        margin-bottom: 30px;
     }
 
     .mat-mdc-radio-button {
-        --mdc-form-field-label-text-size: 18px;
+        --mdc-form-field-label-text-size: 20px;
     }
 
     .mat-mdc-raised-button.mat-primary{
