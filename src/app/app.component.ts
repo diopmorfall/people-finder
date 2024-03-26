@@ -55,11 +55,7 @@ export class AppComponent implements OnInit, OnDestroy {
             Breakpoints.Large
         ])
         .subscribe(result => {
-            if(result.breakpoints[Breakpoints.XSmall]){
-                this.pageSize = 5
-            }
-
-            if(result.breakpoints[Breakpoints.Small]){//todo: after styling the cards, choose the number of items per page
+            if(result.breakpoints[Breakpoints.XSmall] || result.breakpoints[Breakpoints.Small]){
                 this.pageSize = 5
             }
 
