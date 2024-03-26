@@ -51,7 +51,8 @@ export class AppComponent implements OnInit, OnDestroy {
         this.breakpointsSubscription = this.breakpointObserver.observe([
             Breakpoints.XSmall,
             Breakpoints.Small,
-            Breakpoints.Medium
+            Breakpoints.Medium,
+            Breakpoints.Large
         ])
         .subscribe(result => {
             if(result.breakpoints[Breakpoints.XSmall]){
@@ -62,8 +63,8 @@ export class AppComponent implements OnInit, OnDestroy {
                 this.pageSize = 5
             }
 
-            if(result.breakpoints[Breakpoints.Medium]){
-                this.pageSize = 5
+            if(result.breakpoints[Breakpoints.Medium] || result.breakpoints[Breakpoints.Large]){
+                this.pageSize = 9
             }
         })
     }

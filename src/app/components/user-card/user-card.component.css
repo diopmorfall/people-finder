@@ -86,3 +86,18 @@ mat-card-actions{
         font-size: 20px;
     }
 }
+
+@media only screen and (min-width: 1024px) {
+    .user-intro-card{
+        width: 100%;
+    }
+
+    .user-intro-card img{
+        width: 120px;
+        height: 120px;
+    }
+
+    mat-card-content{
+        font-size: 18px;
+    }
+}

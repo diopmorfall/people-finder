@@ -14,9 +14,10 @@ form label:first-of-type{
 
 .radio-group{
     display: flex;
-    flex-direction: column;
+    width: 55%;
+    flex-direction: row;
     justify-content: space-around;
-    align-items: start;
+    align-items: center;
     margin-bottom: 20px;
 }
 
@@ -36,6 +37,7 @@ form label:first-of-type{
 }
 
 mat-form-field{
+    width: 75%;
     margin-bottom: 30px;
 }
 
@@ -54,7 +56,8 @@ mat-form-field{
 }
 
 .mat-mdc-raised-button.mat-primary{
-    width: 25%;
+    width: 30%;
+    height: 45px;
     font-size: 16px;
     background-color: white;
     color: black
@@ -71,6 +74,7 @@ mat-form-field{
     }
     
     .radio-group{
+        width: 65%;
         margin-bottom: 30px;
     }
 
@@ -78,8 +82,32 @@ mat-form-field{
         --mdc-form-field-label-text-size: 20px;
     }
 
+    mat-form-field{
+        width: 65%;
+    }
+
     .mat-mdc-raised-button.mat-primary{
-        height: 50px;
+        height: 45px;
         font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .mat-mdc-radio-button {
+        --mdc-form-field-label-text-size: 20px;
+    }
+
+    .radio-group{
+        width: 70%;
+    }
+
+    mat-form-field{
+        width: 65%;
+        font-size: 20px;
+    }
+
+    .mat-mdc-raised-button.mat-primary{
+        width: 25%;
+        font-size: 22px;
     }
 }

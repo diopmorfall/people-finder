@@ -1,6 +1,6 @@
 .container{
     position: relative;
-    width: 90%;
+    width: 95%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -70,6 +70,10 @@ app-user-card{
         font-size: 18px;
     }
 
+    app-options-search-form{
+        width: 80%;
+    }
+
     app-user-card{
         width: 60%;
     }
@@ -80,5 +84,27 @@ app-user-card{
 
     .error{
         font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .container h2{
+        font-size: 32px;
+    }
+
+    app-options-search-form{
+        width: 60%;
+    }
+
+    .results{
+        display: grid;
+        grid-template-columns: repeat(3, 30%);
+    }
+
+    app-user-card{
+        width: 97%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
