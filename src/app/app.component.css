@@ -13,7 +13,7 @@
 .container h2{
     font-size: 28px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .container h2 a{
@@ -55,4 +55,14 @@ app-user-card{
 
 ::ng-deep .mat-mdc-paginator-container{
     justify-content: center !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .container p:first-of-type{
+        font-size: 18px;
+    }
+
+    app-user-card{
+        width: 60%;
+    }
 }

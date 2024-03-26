@@ -5,8 +5,8 @@
     <mat-card-content>
         <h3>{{ userData.name.first }} {{ userData.name.last }}</h3>
         <p>{{ userData.location.city }} - <span class="country">{{ userData.location.country }}</span></p>
-        <p><span class="intro-title">Email:</span><br>{{ userData.email }}</p>
-        <p><span class="intro-title">Phone number:</span><br>{{ userData.cell }}</p>
+        <p><span class="intro-title">Email:</span><br><br>{{ userData.email }}</p>
+        <p><span class="intro-title">Phone number:</span><br><br>{{ userData.cell }}</p>
     </mat-card-content>
     <mat-card-actions>
         <button mat-raised-button color="primary" (click)="openUserDetails()">See more</button>

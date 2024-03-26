@@ -27,7 +27,7 @@ mat-card-content{
 }
 
 mat-card-content h3{
-    font-weight: 700;
+    font-weight: 600;
     font-size: 24px;
 }
 
@@ -58,4 +58,31 @@ mat-card-actions{
 
 .mat-mdc-raised-button.mat-primary:active{
     opacity: 0.7;
+}
+
+@media only screen and (min-width: 768px) {
+    .user-intro-card img{
+        width: 160px;
+        height: 160px;
+    }
+
+    mat-card-content{
+        font-size: 20px;
+    }
+
+    mat-card-content h3{
+        font-size: 28px;
+    }
+
+    mat-card-content p{
+        margin: 30px 0;
+    }
+
+    mat-card-actions{
+        height: 80px;
+    }
+
+    .mat-mdc-raised-button.mat-primary{
+        font-size: 20px;
+    }
 }
