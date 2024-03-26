@@ -4,10 +4,11 @@ form{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    font-size: 18px;
 }
 
 form label:first-of-type{
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 20px;
 }
 
@@ -32,6 +33,10 @@ form label:first-of-type{
     --mat-radio-ripple-color: white;
     --mat-radio-checked-ripple-color: white;
     --mat-radio-disabled-label-color: rgba(255, 255, 255, 0.5);
+}
+
+.mat-mdc-radio-button {
+    --mdc-form-field-label-text-size: 16px;
 }
 
 mat-form-field{

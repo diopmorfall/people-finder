@@ -38,7 +38,7 @@ mat-card-content p{
 }
 
 .info-label{
-    font-weight: 600;
+    font-weight: 500;
 }
 
 mat-card-actions{
@@ -57,5 +57,5 @@ mat-card-actions{
 }
 
 .mat-mdc-raised-button.mat-primary:active{
-    
+    opacity: 0.7;
 }
